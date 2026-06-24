@@ -1,0 +1,25 @@
+-- Install configuration: ""
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot//launch
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot//launch/gazebo.launch.py
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot//config
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot//urdf
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot//urdf/robot.urdf.xacro
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot//meshes
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot//worlds
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot//worlds/basic_world.sdf
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/ament_index/resource_index/package_run_dependencies/self_balancing_bot
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/ament_index/resource_index/parent_prefix_path/self_balancing_bot
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/environment/ament_prefix_path.sh
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/environment/path.sh
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/environment/path.dsv
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/local_setup.bash
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/local_setup.fish
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/local_setup.sh
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/local_setup.zsh
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/local_setup.dsv
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/package.dsv
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/ament_index/resource_index/packages/self_balancing_bot
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/cmake/self_balancing_botConfig.cmake
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/cmake/self_balancing_botConfig-version.cmake
+-- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/package.xml

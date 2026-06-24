@@ -1,0 +1,29 @@
+[0.022s] Invoking command in '/home/plsh/self_balancing_ws/build/self_balancing_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/plsh/robotics_ws/install/arm_teleop:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/plsh/self_balancing_ws/build/self_balancing_bot -- -j12 -l12
+[0.064s] Invoked command in '/home/plsh/self_balancing_ws/build/self_balancing_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/plsh/robotics_ws/install/arm_teleop:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/plsh/self_balancing_ws/build/self_balancing_bot -- -j12 -l12
+[0.075s] Invoking command in '/home/plsh/self_balancing_ws/build/self_balancing_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/plsh/robotics_ws/install/arm_teleop:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/plsh/self_balancing_ws/build/self_balancing_bot
+[0.083s] -- Install configuration: ""
+[0.084s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot//launch
+[0.084s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot//launch/gazebo.launch.py
+[0.084s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot//config
+[0.084s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot//urdf
+[0.084s] -- Installing: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot//urdf/robot.urdf.xacro
+[0.084s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot//meshes
+[0.084s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot//worlds
+[0.084s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot//worlds/basic_world.sdf
+[0.084s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/ament_index/resource_index/package_run_dependencies/self_balancing_bot
+[0.084s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/ament_index/resource_index/parent_prefix_path/self_balancing_bot
+[0.085s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/environment/ament_prefix_path.sh
+[0.085s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/environment/ament_prefix_path.dsv
+[0.085s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/environment/path.sh
+[0.085s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/environment/path.dsv
+[0.085s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/local_setup.bash
+[0.085s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/local_setup.fish
+[0.085s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/local_setup.sh
+[0.085s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/local_setup.zsh
+[0.085s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/local_setup.dsv
+[0.085s] -- Installing: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/package.dsv
+[0.085s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/ament_index/resource_index/packages/self_balancing_bot
+[0.085s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/cmake/self_balancing_botConfig.cmake
+[0.085s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/cmake/self_balancing_botConfig-version.cmake
+[0.085s] -- Up-to-date: /home/plsh/self_balancing_ws/install/self_balancing_bot/share/self_balancing_bot/package.xml
+[0.086s] Invoked command in '/home/plsh/self_balancing_ws/build/self_balancing_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/plsh/robotics_ws/install/arm_teleop:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/plsh/self_balancing_ws/build/self_balancing_bot
