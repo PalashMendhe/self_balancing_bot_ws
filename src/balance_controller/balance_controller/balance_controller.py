@@ -13,6 +13,7 @@ class BalanceController(Node):
         self.x_dot = 0.0
         self.theta = 0.0
         self.theta_dot = 0.0
+        self.start_time = None
 
         M, m, l, g = 0.8, 0.2, 0.235, 9.81
 
@@ -24,7 +25,7 @@ class BalanceController(Node):
         ])
         B = np.array([[0], [1/M], [0], [-1/(M*l)]])
 
-        desired_poles = np.array([-5+1j, -5-1j, -8+2j, -8-2j])
+        desired_poles = np.array([-2+0.5j, -2-0.5j, -3+1j, -3-1j])
         result = place_poles(A, B, desired_poles)
         self.K = result.gain_matrix
         self.get_logger().info(f'Gain matrix K: {self.K}')
@@ -58,19 +59,36 @@ class BalanceController(Node):
         roll, pitch, yaw = self.quaternion_to_euler(q.x, q.y, q.z, q.w)
         self.theta = pitch
         self.theta_dot = msg.angular_velocity.y
+        self.az = msg.linear_acceleration.z
+        self.roll = roll
 
     def odom_callback(self, msg):
         self.x = msg.pose.pose.position.x
         self.x_dot = msg.twist.twist.linear.x
     def control_loop(self):
-        if self.get_clock().now().nanoseconds < 20e9:  # Wait for 20 seconds before starting control
+        if self.start_time is None:
+            self.start_time = self.get_clock().now()
             return
-        state = np.array([self.x, self.x_dot, self.theta, self.theta_dot])
+        elapsed = (self.get_clock().now() - self.start_time).nanoseconds / 1e9
+        if elapsed < 2.0:  # 2 second warmup
+            return
+        if abs(self.theta) > 0.5:
+            return
+        if abs(self.az) < 5.0:
+            msg = Twist()
+            self.cmd_vel_publisher_.publish(msg)
+            return
+        state = np.array([self.x * 0.07, self.x_dot * 0.07, self.theta, self.theta_dot])
         u = float(-self.K @ state)
+        u = np.clip(u, -3.0, 3.0)
         msg = Twist()
         msg.linear.x = u
+        msg.angular.z = -self.roll * 3.0
+        
         self.cmd_vel_publisher_.publish(msg)
-        u = np.clip(u, -2.0, 2.0)
+        
+        self.get_logger().info(f'theta: {self.theta:.3f}, elapsed: {elapsed:.3f}, control: {u:.3f}, theta_dot: {self.theta_dot:.3f}, x: {self.x:.3f}, x_dot: {self.x_dot:.3f}, az: {self.az:.3f}, roll: {self.roll:.3f}')
+        
 
     
 def main(args=None):
