@@ -24,7 +24,7 @@ def generate_launch_description():
             launch_arguments={
                 'gz_args': '-r ' + os.path.join(
                     get_package_share_directory('self_balancing_bot'),
-                    'worlds', 'basic_world.sdf'
+                    'worlds', 'balance.sdf'
                 )
             }.items(),
         ),
@@ -50,7 +50,7 @@ def generate_launch_description():
                 '-topic', '/robot_description',
                 '-x', '0.0',
                 '-y', '0.0',
-                '-z', '0.1',
+                '-z', '0.15',
             ],
             output='screen',
         ),
@@ -58,10 +58,11 @@ def generate_launch_description():
             package='ros_gz_bridge',
             executable='parameter_bridge',
             arguments=[
-                '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
-                '/imu@sensor_msgs/msg/Imu[gz.msgs.IMU',
-                '/camera/image_raw@sensor_msgs/msg/Image[gz.msgs.Image',
-            ],
+                    '/imu@sensor_msgs/msg/Imu[gz.msgs.IMU',
+                    '/cmd_vel@geometry_msgs/msg/Twist]gz.msgs.Twist',
+                    '/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry',
+                    '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
+                ],
             output='screen',
         ),
     ])

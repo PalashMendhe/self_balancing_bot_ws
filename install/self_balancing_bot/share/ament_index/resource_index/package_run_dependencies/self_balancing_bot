@@ -1,1 +1,1 @@
-ament_lint_auto;ament_lint_common
+python3-scipy;python3-numpy;ament_lint_auto;ament_lint_common
