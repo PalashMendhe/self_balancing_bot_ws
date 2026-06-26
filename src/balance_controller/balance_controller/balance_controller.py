@@ -14,6 +14,7 @@ class BalanceController(Node):
         self.theta = 0.0
         self.theta_dot = 0.0
         self.start_time = None
+        self.x_integral = 0.0
 
         M, m, l, g = 0.8, 0.2, 0.235, 9.81
 
@@ -55,10 +56,12 @@ class BalanceController(Node):
         return roll, pitch, yaw
             
     def imu_callback(self, msg):
+        alpha = 0.3  # Low-pass filter coefficient
         q = msg.orientation
         roll, pitch, yaw = self.quaternion_to_euler(q.x, q.y, q.z, q.w)
         self.theta = pitch
-        self.theta_dot = msg.angular_velocity.y
+        
+        self.theta_dot = alpha * msg.angular_velocity.y + (1 - alpha) * self.theta_dot
         self.az = msg.linear_acceleration.z
         self.roll = roll
 
@@ -74,16 +77,19 @@ class BalanceController(Node):
             return
         if abs(self.theta) > 0.5:
             return
-        if abs(self.az) < 5.0:
+        if abs(self.az) < 5.0 or abs(self.roll) > 0.5:
             msg = Twist()
             self.cmd_vel_publisher_.publish(msg)
             return
-        state = np.array([self.x * 0.07, self.x_dot * 0.07, self.theta, self.theta_dot])
-        u = float(-self.K @ state)
+        
+        state = np.array([self.x * 0.13, self.x_dot * 0.15, self.theta, self.theta_dot])
+        self.x_integral += self.x * 0.02
+        x_integral_term = np.clip(self.x_integral * 0.05, -0.3, 0.3)
+        u = float(-self.K @ state) - x_integral_term
         u = np.clip(u, -3.0, 3.0)
         msg = Twist()
         msg.linear.x = u
-        msg.angular.z = -self.roll * 3.0
+        msg.angular.z = 0.0
         
         self.cmd_vel_publisher_.publish(msg)
         

@@ -3,14 +3,14 @@
        xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <xacro:property name="wheel_radius" value="0.05"/>
-  <xacro:property name="wheel_width" value="0.02"/>
+  <xacro:property name="wheel_width" value="0.04"/>
   <xacro:property name="wheel_mass" value="0.1"/>
 
   <xacro:property name="bot_mass" value="0.2"/>
   <xacro:property name="bot_chassis_mass" value="0.6"/>
 
   <xacro:property name="bot_height" value="0.25"/>
-  <xacro:property name="bot_length" value="0.15"/>
+  <xacro:property name="bot_length" value="0.17"/>
   <xacro:property name="bot_width" value="0.1"/>
 
   <!--Inertia Macros-->
@@ -95,11 +95,11 @@
                        x="${bot_length}"
                        y="${bot_width}"
                        z="${bot_height}"
-                       cz="0.235"/>
+                       cz="0.225"/>
   </link>
 
-  <xacro:wheel name="left" x_offset="0" y_offset="${0.06}"/>
-  <xacro:wheel name="right" x_offset="0" y_offset="${-0.06}"/>
+  <xacro:wheel name="left" x_offset="0" y_offset="${0.08}"/>
+  <xacro:wheel name="right" x_offset="0" y_offset="${-0.08}"/>
 
   <!--Dummy Base Footprint-->
   <link name="base_footprint"/>
@@ -119,7 +119,7 @@
             name="gz::sim::systems::DiffDrive">
       <left_joint>left_wheel_joint</left_joint>
       <right_joint>right_wheel_joint</right_joint>
-      <wheel_separation>${2 * 0.06}</wheel_separation>
+      <wheel_separation>${2 * 0.08}</wheel_separation>
       <wheel_radius>${wheel_radius}</wheel_radius>
       <odom_publish_frequency>50</odom_publish_frequency>
       <topic>/cmd_vel</topic>
