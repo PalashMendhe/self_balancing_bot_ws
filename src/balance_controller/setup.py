@@ -24,8 +24,8 @@ setup(
         ],
     },
     entry_points={
-    'console_scripts': [
-        'balance_controller = balance_controller.balance_controller:main'
-    ],
-},
+        'console_scripts': [
+            'balance_controller = balance_controller.balance_controller:main'
+        ],
+    },
 )

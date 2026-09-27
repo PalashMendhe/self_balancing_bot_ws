@@ -50,7 +50,7 @@ def generate_launch_description():
                 '-topic', '/robot_description',
                 '-x', '0.0',
                 '-y', '0.0',
-                '-z', '0.12',
+                '-z', '0.10',
                 '--ros-args', '-p', 'use_sim_time:=true',
             ],
             output='screen',
@@ -67,4 +67,3 @@ def generate_launch_description():
             output='screen',
         ),
     ])
-

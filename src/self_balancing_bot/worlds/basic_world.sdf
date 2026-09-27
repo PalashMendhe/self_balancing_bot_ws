@@ -1,5 +1,4 @@
-<?xml version="1.0"?>
-<sdf version="1.6">
+<sdf version="1.8">
   <world name="warehouse">
 
     <plugin filename="gz-sim-physics-system"
@@ -12,6 +11,8 @@
             name="gz::sim::systems::Sensors">
       <render_engine>ogre2</render_engine>
     </plugin>
+    <plugin filename="gz-sim-imu-system"
+            name="gz::sim::systems::Imu"/>
 
     <!--lighting-->
     <light type="directional" name="sun">
